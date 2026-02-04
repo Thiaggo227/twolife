@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+header {
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+}
+.textHeader{
+    font-size: 21px;
+    color: #000000e4;
+}
+
+#menu-icon {
+    color: #000000e4;
+    font-size: 30px;
+    display: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+li a {
+    font-weight: 500;
+    font-size: 11px;
+    text-decoration: none;
+    color: #000000e4;
+    position: relative;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #000000e4;
+    transition: width 0.3s ease;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+i {
+    margin-left: 7px;
+}
+.backImg{
+    display: flex;
+    justify-content: center;
+}
+.backImg img{
+    height: 550px;
+    width: 100%;
+}
+.botao{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 160px;
+    background-color: #000000e4;
+    color: #f0f0f0;
+    padding: 10px;
+    border: 2px solid #000000e4;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: #f0f0f0;
+    color: #000000e4;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000ac;
+    display: none;
+    z-index: 999;
+}
+.containerSend {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 25px #f0f0f0;
+    display: none;
+    z-index: 1000;
+}
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 55px;
+    color: white;
+    cursor: pointer;
+}
+.textSend{
+    color: #f0f0f0;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.sendP{
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+input::placeholder {
+    color: #aaa;
+}
+#btnConfirmar{
+    margin-top: 10px;
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #000000e4;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#btnConfirmar:hover{
+    background-color: #000000e4;
+    color: #f0f0f0;
+   
+}
+.msgBox {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    animation: fadeIn 0.4s ease;
+}
+
+.msgBox h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #52dd52;
+    text-align: center;
+}
+
+.msgBox p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #fff;
+}
+
+.msgBox strong {
+    color: #ccc;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msg {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0f0;
+    display: none;
+}
+
+
+
+.text{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 60px;
+}
+.text::after{
+    content: "";
+    display: block;
+    width: 150px;      
+    height: 2px;      
+    background: #000000e4;  
+    margin: 5px auto 0;
+}
+.pText{
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.box{
+    height: 165px;
+    width: 270px;
+    padding: 10px;
+    border: 1px solid #0000003c;
+    transition: 0.4s;
+}
+.box:hover{
+    background-color: #000000d6;
+}
+.box:hover .textBox,
+.box:hover .pBox,
+.box:hover .pValor,
+.box:hover i{
+    color: #f0f0f0;
+}
+.textBox{
+    color: #000000e4;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.pBox{
+    color: #000000e4;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.pValor{
+    margin-top: 5px;
+    color: #000000e4;
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 5px;
+}
+i{
+    font-size: 20px;
+}
+.area{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.caixa{
+    width: 370px;
+    padding: 5px;
+    box-shadow: 0  4px #000000ba;
+    transition: 0.3s;
+}
+.caixa .imgCaixa{
+    height: 300px;
+    width: 100%;
+    transition: 0.3s;
+}
+.imgCaixa:hover{
+    transform: translateY(-5px);
+}
+.caixaP{
+    font-weight: 600;
+    padding: 5px;
+    color: #000000e4;
+}
+.textContato{
+    color: #f0f0f0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+.textContato::after{
+    content: "";
+    display: block;
+    width: 150px;      
+    height: 2px;      
+    background: #f0f0f0;  
+    margin: 15px auto 0;
+}
+.pContato{
+    color: #f0f0f0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+main{
+    padding: 55px;
+    margin-top: 50px;
+    background-color: #000000e4;
+}
+.hero{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.mid{
+    height: 165px;
+    width: 270px;
+    padding: 15px;
+    border: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+.mid:hover{
+    transform: translateY(-5px);
+}
+#iconeMid{
+    color: #f0f0f0;
+}
+.textMid{
+    color: #f0f0f0;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.pMid{
+    color: #f0f0f0;
+    margin-top: 10px;
+}
+.adress{
+    padding: 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.textAdress{
+    font-size: 17px;
+    font-weight: 400;
+}
+.adress img{
+    width: 530px;
+}
+.footer {
+    background-color: #000000e4;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+    header {
+        padding: 7px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .textHeader{
+        font-size: 23px;
+        margin-left: 10px;
+    }
+
+    #menu-icon {
+        display: block;
+        margin-right: 15px;
+    }
+
+    .menu {
+        background-color: #f0f0f0;
+        box-shadow: 0  3px #000000e4;
+        margin-top: -7px;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 35px;
+        padding: 25px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 100;
+        transform: translateY(-10px);
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .menu.active {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    li a {
+        color: #000000e4;
+        font-size: 14px;
+    }
+    .backImg img{
+        height: 320px;
+    }
+    .btn{
+        padding: 5px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .box{
+        width: 100%;
+    }
+    .area{
+        display: flex;
+        flex-direction: column;
+    }
+    .caixa{
+        width: auto;
+    }
+    .text{
+        font-size: 30px;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .mid{
+        width: 100%;
+    }
+    .textContato{
+        font-size: 30px;
+    }
+    .adress{
+        display: flex;
+        flex-direction: column;
+    }
+    .adress img{
+        width: auto;
+    }
+    .containerSend{
+        display: flex;
+        width: 300px;
+    }
+}
